@@ -1,2 +1,2 @@
-# IO 1
+# Inżynieria Oprogramowania I
 Repository created to host my school exercises.
