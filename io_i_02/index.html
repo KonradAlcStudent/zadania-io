@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>IO_I_02</title>
+</head>
+<body>
+    <div class="back">
+        <a href="../index.html"><</a>
+    </div>
+    <div class="container">
+        <form>
+            <div class="form__header">
+                <h2>Kalkulator ceny</h2>
+            </div>
+            <div class="input__box">
+                <label for="customer">Klient</label>
+                <select id="customer">
+                    <option value="0" disabled selected>-- Wybierz klienta --</option>
+                    <option value="1">Klient 1</option>
+                    <option value="2">Klient 2</option>
+                    <option value="3">Klient 3</option>
+                </select>
+                <div class="error hide"></div>
+            </div>
+            <div class="input__box">
+                <label for="car">Auto</label>
+                <select id="car">
+                    <option value="0" disabled selected>-- Wybierz produkt --</option>
+                    <option value="1">Produkt 1 | 2.50 zł brutto</option>
+                    <option value="2">Produkt 2 | 10.99 zł brutto</option>
+                    <option value="3">Produkt 3 | 15.99 zł brutto</option>
+                </select>
+                <div class="error hide"></div>
+            </div>
+            <div class="input__box">
+                <label for="discount">Rabat</label>
+                <input id="discount" type="number" placeholder="Podaj rabat">
+                <div class="error hide"></div>
+            </div>
+            <button id="calculate">Oblicz</button>
+            <div class="output-msg"></div>
+        </form>
+
+        <footer>Konrad Alchimowicz &copy;</footer>
+    </div>
+
+
+    <script src="javascript/data.js"></script>
+    <script src="javascript/script.js"></script>
+
+</body>
+</html>

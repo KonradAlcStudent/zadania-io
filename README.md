@@ -1,2 +1,2 @@
-# Inżynieria Oprogramowania I
-This repository was created to host my school exercises.
+# IO 1
+Repository created to host my school exercises.
