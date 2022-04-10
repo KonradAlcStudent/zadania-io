@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>IO_I_02</title>
+</head>
+<body>
+    <div class="back">
+        <a href="../index.html"><</a>
+    </div>
+    <div class="container">
+        <form>
+            <div class="form__header">
+                <h2>Dostawa</h2>
+            </div>
+
+            <div class="input__box">
+                <label for="wartosc-koszyka">Wartość koszyka (zł)</label>
+                <input id="wartosc-koszyka" type="number" placeholder="Podaj wartość koszyka">
+                <div class="error hide"></div>
+            </div>
+
+            <div class="input__box">
+                <label for="waga-przesylki">Waga przesyłki (kg)</label>
+                <input id="waga-przesylki" type="number" placeholder="Podaj wagę">
+                <div class="error hide"></div>
+            </div>
+
+            <div class="input__box--radio">
+                <div class="error hide"></div>
+                <label for="wielkosc-przesylki">Wielkość przesyłki:</label>
+                <br>
+                <input type="radio" id="przesylka-mala" name="wielkosc-przesylki" checked>
+                <label for="przesylka-mala">Mała</label>
+                <br>
+                <input type="radio" id="przesylka-srednia" name="wielkosc-przesylki">
+                <label for="przesylka-srednia">Średnia</label>
+                <br>
+                <input type="radio" id="przesylka-duza" name="wielkosc-przesylki">
+                <label for="przesylka-duza">Duża</label>
+                <br>
+                <input type="radio" id="przesylka-niestandardowa" name="wielkosc-przesylki">
+                <label for="przesylka-niestandardowa">Przesyłka niestandardowa</label>
+
+                <div class="input__box cena-niestandardowa hide">
+                    <label for="przesylka-niestandardowa-cena">Twoja wycena</label>
+                    <input id="przesylka-niestandardowa-cena" type="number" placeholder="Podaj cenę">
+                    <div class="error hide"></div>
+                </div>
+            </div>
+            
+            <button id="calculate">Oblicz koszt dostawy</button>
+            <div class="output-msg"></div>
+        </form>
+
+        <footer>Konrad Alchimowicz &copy;</footer>
+    </div>
+
+
+    <script src="./javascript/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+
+    background-color: #333;
+    color: #eeeeee;
+}
+
+.back {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+}
+
+.back a {
+    color: #eeeeee;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    flex-direction: column;
+}
+
+form {
+    text-align: center;
+    padding: 2rem;
+    background-color: #444;
+    border-radius: 1rem;
+    max-width: 20rem;
+}
+
+.form__header {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #555555;
+}
+
+.input__box {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 1.5rem;
+}
+
+.input__box.hide {
+    display: none;
+}
+
+.input__box--radio {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+input,
+select {
+    padding: .75rem 1rem;
+    margin-top: .5rem;
+    border-radius: .5rem;
+    border: none;
+    background-color: #292929;
+    color: #eeeeee;
+    transition: .25s;
+}
+
+input[type='radio'] {
+    cursor: pointer;
+}
+
+input:focus {
+    outline: none;
+    background-color: #1f1f1f;
+    color: #eeeeee;
+}
+
+button {
+    margin-top: 1.5rem;
+    padding: .75rem 1.5rem;
+    border-radius: .5rem;
+    border: none;
+    background-color: #2a9fff;
+    color: #eeeeee;
+    cursor: pointer;
+    transition: .25s;
+}
+
+button:hover {
+    background-color: #008cff;
+}
+
+.output-msg {
+    margin-top: 1.5rem;
+}
+
+.output-msg.hide {
+    display: none;
+}
+
+.error {
+    margin-top: 15px;
+    font-weight: 300;
+    color: greenyellow;
+    text-align: center;
+}
+
+.error.hide {
+    display: none;
+}
