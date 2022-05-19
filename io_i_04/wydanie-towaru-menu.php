@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -14,16 +18,20 @@
 </head>
 <body>
     <div class="back">
-        <a href="../index.html"><</a>
+        <a href="./index.html"><</a>
     </div>
     <div class="container">
         <div class="menu">
             <div class="form__header">
-                <h2>Menu</h2>
+                <h2>Wydanie towaru</h2>
+                <?php
+                    if (isset($_SESSION['error'])) {
+                        echo "<div class='error'>" . $_SESSION['error'] . "</div>";
+                    }
+                ?>
             </div>
-            <a href="./nowa-dostawa.php"><button>Przyjęcie towaru</button></a>
-            <a href="./stan-magazynowy.php"><button>Stan magazynowy</button></a>
-            <a href="./wydaj-towar.php"><button>Wydaj towar</button></a>
+            <a href="./wydanie-towaru-doc.php" target="_blank"><button>Wystaw dokument</button></a>
+            <a href="./index.html"><button>Kontynuuj</button></a>
         </div>
 
         <footer>Konrad Alchimowicz &copy;</footer>

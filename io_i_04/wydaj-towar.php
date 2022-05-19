@@ -82,6 +82,7 @@
 
     <?php
         unset($_SESSION['error']);
+        unset($_SESSION['wydanie-doc']);
     ?>
 
     <script src="./javascript/script.js"></script>
