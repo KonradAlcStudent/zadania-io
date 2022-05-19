@@ -62,6 +62,13 @@ form,
     margin-top: 1.5rem;
 }
 
+.input-merge {
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid #2a9fff;
+    border-radius: 1rem;
+}
+
 .input-box.hide {
     display: none;
 }

@@ -21,11 +21,8 @@
         <a href="./index.html"><</a>
     </div>
     <div class="container">
-        <div class="menu">
-            <div class="form__header">
-                <h2>Stan magazynowy</h2>
-            </div>
-
+        <div class="form__header">
+            <h2>Stan magazynowy</h2>
         </div>
 
         <?php
@@ -37,39 +34,37 @@
             }
             $conn -> set_charset("utf8");
 
-            $sql = "SELECT towary.nazwa_towar, towary.cena_towar, towary.waga, towary.data_produkcji, partie.ilosc, partie.data_przyjecia FROM towary LEFT JOIN partie ON towary.partia_id = partie.id_partia ORDER BY towary.nazwa_towar;";
-                $result = $conn->query($sql);
+            $sql = "SELECT nazwa_towar, cena_towar, waga, SUM(ilosc) as ilosc_prod, data_przyjecia FROM partie INNER JOIN towary ON towar_id=id_towar GROUP BY nazwa_towar;";
+            $result = $conn->query($sql);
 
-                if ($result->num_rows > 0) {
+            if ($result->num_rows > 0) {
+                echo "
+                <table border='1'>
+                <tr>
+                    <th>Nazwa towaru</th>
+                    <th>Cena za szt.</th>
+                    <th>Ilość</th>
+                    <th>Waga</th>
+                    <th>Data przyjęcia</th>
+                </tr>";
+                
+                while($row = $result->fetch_assoc()) {
                     echo "
-                    <table border='1'>
                     <tr>
-                        <th>Nazwa towaru</th>
-                        <th>Cena za szt.</th>
-                        <th>Ilość</th>
-                        <th>Waga</th>
-                        <th>Data produkcji</th>
-                        <th>Data przyjęcia</th>
-                    </tr>";
-                    
-                    while($row = $result->fetch_assoc()) {
-                        echo "
-                        <tr>
-                            <td>" . $row['nazwa_towar'] . "</td>
-                            <td>" . $row['cena_towar'] . "</td>
-                            <td>" . $row['ilosc'] . "</td>
-                            <td>" . $row['waga'] . "</td>
-                            <td>" . $row['data_produkcji'] . "</td>
-                            <td>" . $row['data_przyjecia'] . "</td>
-                        </tr>
-                        ";
-                    }
+                        <td>" . $row['nazwa_towar'] . "</td>
+                        <td>" . $row['cena_towar'] . "</td>
+                        <td>" . $row['ilosc_prod'] . "</td>
+                        <td>" . $row['waga'] . "</td>
+                        <td>" . $row['data_przyjecia'] . "</td>
+                    </tr>
+                    ";
+                }
 
-                    echo "</table>";
-                }
-                else {
-                    echo "<span>Brak danych.</span>";
-                }
+                echo "</table>";
+            }
+            else {
+                echo "<span>Brak danych.</span>";
+            }
 
             $conn->close();
         ?>
